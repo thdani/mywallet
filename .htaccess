@@ -1,0 +1,14 @@
+RewriteEngine on
+
+RewriteRule ^home/$ ./index.php
+RewriteRule ^logout/$ ./index.php?logout
+RewriteRule ^transfer/([0-9]+)/$ ./index.php?transfer&id=$1
+RewriteRule ^transfer/$ ./index.php?transfer
+RewriteRule ^editwallet/([0-9]+)/$ ./index.php?wallet=$1
+RewriteRule ^addwallet/$ ./index.php?wallet=new
+RewriteRule ^categories/$ ./index.php?category=show
+RewriteRule ^editcategory/([0-9]+)/$ ./index.php?category=$1
+RewriteRule ^addcategory/$ ./index.php?category=new
+RewriteRule ^delete/([0-9]+)/$ ./index.php?del=$1
+RewriteRule ^deletewallet/([0-9]+)/$ ./index.php?del_wallet=$1
+RewriteRule ^categories/delete/([0-9]+)/$ ./index.php?category=show&del_cat=$1
