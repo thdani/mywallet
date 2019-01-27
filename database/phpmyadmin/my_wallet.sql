@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 09, 2018 at 02:09 PM
--- Server version: 5.7.19
--- PHP Version: 7.1.9
+-- Generation Time: Jan 27, 2019 at 06:15 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,8 +44,7 @@ CREATE TABLE IF NOT EXISTS `admin` (
 --
 
 INSERT INTO `admin` (`id`, `user_id`, `added_at`, `deleted`, `deleted_at`) VALUES
-(1, 1, '2018-12-01 09:51:26', 0, NULL),
-(2, 2, '2018-12-02 12:06:02', 1, '2018-12-02 12:14:38'),
+(2, 5, '2018-12-02 12:06:02', 0, '2018-12-02 12:14:38'),
 (3, 3, '2018-12-02 12:11:11', 1, '2018-12-02 12:12:39');
 
 -- --------------------------------------------------------
@@ -62,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `login_statistics` (
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2460 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2465 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `login_statistics`
@@ -2529,7 +2528,12 @@ INSERT INTO `login_statistics` (`id`, `logged_at`, `added_at`, `deleted`, `delet
 (2456, '2018-12-09', '2018-12-09 13:25:37', 0, NULL),
 (2457, '2018-12-09', '2018-12-09 13:25:48', 0, NULL),
 (2458, '2018-12-09', '2018-12-09 13:27:05', 0, NULL),
-(2459, '2018-12-09', '2018-12-09 13:53:19', 0, NULL);
+(2459, '2018-12-09', '2018-12-09 13:53:19', 0, NULL),
+(2460, '2019-01-06', '2019-01-06 12:22:10', 0, NULL),
+(2461, '2019-01-20', '2019-01-20 12:35:24', 0, NULL),
+(2462, '2019-01-26', '2019-01-26 11:10:56', 0, NULL),
+(2463, '2019-01-26', '2019-01-26 11:23:24', 0, NULL),
+(2464, '2019-01-27', '2019-01-27 17:53:40', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2551,31 +2555,16 @@ CREATE TABLE IF NOT EXISTS `money_transfer` (
   PRIMARY KEY (`id`),
   KEY `kk_cat` (`category_id`),
   KEY `kk_wallet` (`wallet_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `money_transfer`
 --
 
 INSERT INTO `money_transfer` (`id`, `category_id`, `wallet_id`, `title`, `description`, `value`, `added_at`, `deleted`, `deleted_at`) VALUES
-(3, 1, 1, 'teszt', 'test', '150.00', '2018-11-24 13:40:02', 0, NULL),
-(4, 1, 2, 'test', 'test', '500.00', '2018-11-24 16:30:05', 0, NULL),
-(5, 1, 2, 'test', 'test', '500.00', '2018-11-24 16:30:05', 0, '2018-11-25 17:38:43'),
-(6, 2, 1, 'Havi fizetés', 'YUUPPPYYYY :D', '70000.00', '2018-11-25 09:33:10', 0, NULL),
-(7, 2, 2, 'Havi fizetés', 'Király :D 2', '200000.00', '2018-11-25 09:35:24', 0, '2018-11-25 10:01:36'),
-(10, 2, 2, 'asdas', '', '1231.00', '2018-11-25 09:39:37', 0, NULL),
-(11, 2, 2, 'asdas', '', '1231.00', '2018-11-25 09:40:02', 0, NULL),
-(12, 2, 2, 'asdas', '', '1231.00', '2018-11-25 09:40:52', 0, '2018-11-25 10:02:07'),
-(13, 2, 1, 'asdas', '', '123.00', '2018-11-25 09:41:22', 0, NULL),
-(14, 2, 1, 'asdasdasdasdasd', 'asd', '123.00', '2018-11-25 09:49:06', 0, '2018-11-25 10:02:23'),
-(15, 1, 1, 'test', '0', '1236.00', '2018-11-25 09:52:34', 0, '2018-11-25 17:39:38'),
-(16, 1, 3, 'test', 'test', '1500.00', '2018-11-25 14:46:36', 0, '2018-11-25 17:38:33'),
-(17, 2, 2, 'asd', 'asd', '123.00', '2018-11-25 15:38:02', 0, NULL),
-(18, 2, 2, 'most', 'most', '1.00', '2018-12-01 13:18:40', 0, NULL),
-(19, 3, 2, 'yx', '', '1500.00', '2018-12-02 12:37:41', 0, NULL),
-(20, 4, 1, 'adasd', '', '2000.00', '2018-12-02 12:37:53', 0, '2018-12-09 13:50:06'),
-(21, 2, 3, 'Fizu', '', '1500.00', '2018-12-02 13:22:06', 0, NULL),
-(22, 4, 3, 'asdasd', '', '20000.00', '2018-12-02 13:26:20', 0, '2018-12-09 13:43:25');
+(1, 2, 4, 'Nyugdij 1/2', 'Első része a nyugdíjnak', '11000.00', '2019-01-06 12:33:35', 0, NULL),
+(2, 1, 4, '2KV', '2 kávé a vremeplovban', '350.00', '2019-01-06 12:35:10', 0, NULL),
+(3, 3, 4, 'Telenor', '', '2250.00', '2019-01-06 12:37:30', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2595,17 +2584,16 @@ CREATE TABLE IF NOT EXISTS `transfer_category` (
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `kk_user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `transfer_category`
 --
 
 INSERT INTO `transfer_category` (`id`, `user_id`, `title`, `description`, `type`, `added_at`, `deleted`, `deleted_at`) VALUES
-(1, 1, 'test', 'test', 1, '2018-11-24 13:22:55', 0, '2018-11-25 17:40:40'),
-(2, 1, 'Fizetés', 'Havi 1x', 1, '2018-11-24 17:44:02', 0, NULL),
-(3, 1, 'LOL', 'LOL', 2, '2018-11-25 17:03:25', 0, NULL),
-(4, 1, 'cucc', 'cucc', 2, '2018-11-25 16:53:30', 0, '2018-12-09 13:47:25');
+(1, 5, 'Vremeplov_KV', 'Cappuchino sa cimetom', 2, '2019-01-06 12:31:53', 0, NULL),
+(2, 5, 'Nyugdij', 'Havi nyugdij', 1, '2019-01-06 12:32:41', 0, NULL),
+(3, 5, 'Mobil_számla', 'Havi mobil számla', 2, '2019-01-06 12:36:57', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2628,17 +2616,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `gender`, `phone`, `mobile`, `status_code`, `reg_date`, `deleted`, `deleted_at`) VALUES
-(1, 'Roland', 'Kucora', 'kucora.roland.96@gmail.com', '1b973dbed0a8ecd5bb227d1bcbf1af0a', 1, '123123', '123123', '91eb496ac5a8b59c08630a2529a2c3a4', '2018-11-24 11:49:46', 0, NULL),
 (2, 'Teszt', 'Teszt', 'test@gmail.com', '1b973dbed0a8ecd5bb227d1bcbf1af0a', NULL, '', '', '91eb496ac5a8b59c08630a2529a2c3a4', '2018-11-24 11:49:46', 0, NULL),
 (3, 'asd', 'asd', 'asdasd@gmail.com', '7a1f66c2f0513591631417dabe413e33', 1, '', '', '', '2018-12-01 15:21:44', 0, NULL),
-(4, 'asdasdss', 'asdasdasdsd', 'asdasd@gmail.com', '1b973dbed0a8ecd5bb227d1bcbf1af0a', 2, '123123', '12312312312', '', '2018-12-01 15:22:19', 1, '2018-12-02 12:17:26');
+(4, 'asdasdss', 'asdasdasdsd', 'asdasd@gmail.com', '1b973dbed0a8ecd5bb227d1bcbf1af0a', 2, '123123', '12312312312', '', '2018-12-01 15:22:19', 1, '2018-12-02 12:17:26'),
+(5, 'Daniel', 'Toth', 'valdizney@gmail.com', 'd39017cfbbaec19c29037dce088b651f', 1, '', '', '909d7c8f63dcb4b231924d56e123c25d', '2019-01-06 12:19:52', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2655,7 +2643,7 @@ CREATE TABLE IF NOT EXISTS `wallets` (
   `deleted` tinyint(1) UNSIGNED NOT NULL DEFAULT '0',
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `wallets`
@@ -2664,7 +2652,8 @@ CREATE TABLE IF NOT EXISTS `wallets` (
 INSERT INTO `wallets` (`id`, `title`, `currency`, `added_at`, `deleted`, `deleted_at`) VALUES
 (1, 'Serbian wallet', 'RSD', '2018-11-24 13:39:47', 0, '2018-11-25 17:40:27'),
 (2, 'Hungarian wallet', 'HUF', '2018-11-24 13:51:06', 0, NULL),
-(3, 'Global', 'EUR', '2018-11-25 14:45:44', 0, '2018-12-09 13:44:38');
+(3, 'Global', 'EUR', '2018-11-25 14:45:44', 0, '2018-12-09 13:44:38'),
+(4, 'Mywallet', 'RSD', '2019-01-06 12:24:21', 0, NULL);
 
 --
 -- Constraints for dumped tables
